@@ -5,6 +5,7 @@ from datetime import datetime
 
 JIRA_CLOUD_ID = Variable.get("JIRA_CLOUD_ID")
 JIRA_API_KEY = Variable.get("JIRA_API_KEY")
+JIRA_EMAIL = Variable.get("JIRA_EMAIL")
 
 default_args = {
     'owner': 'airflow',
@@ -15,14 +16,14 @@ default_args = {
 list_alerts_cmd = f'''
 curl --request GET \
   --url "https://api.atlassian.com/jsm/ops/api/{JIRA_CLOUD_ID}/v1/alerts" \
-  --user "luisdi28ms@gmail.com:{JIRA_API_KEY}" \
+  --user "{JIRA_EMAIL}:{JIRA_API_KEY}" \
   --header 'Accept: application/json'
 '''
 
 create_alert_cmd = f'''
 curl --request POST \
   --url "https://api.atlassian.com/jsm/ops/api/{JIRA_CLOUD_ID}/v1/alerts" \
-  --user "luisdi28ms@gmail.com:{JIRA_API_KEY}" \
+  --user "{JIRA_EMAIL}:{JIRA_API_KEY}" \
   --header "Accept: application/json" \
   --header "Content-Type: application/json" \
   --data '{{"message":"Airflow ran fine!"}}'

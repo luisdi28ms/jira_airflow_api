@@ -44,3 +44,13 @@ chmod +x airflow.sh
 ```sh
 ./airflow.sh bash
 ```
+
+7. Add the JIRA variables.
+
+* JIRA_CLOUD_ID
+* JIRA_EMAIL
+* JIRA_API_KEY
+
+```sh
+airflow variables set <key> <value>
+```
