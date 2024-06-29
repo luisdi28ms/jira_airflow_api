@@ -3,6 +3,16 @@ A small project showcasing my knowledge of integrating API's and Airflow workflo
 
 
 # Run App
+
+## Requirements
+
+A JIRA account with a JIRA Service Management Project.
+* JIRA User email
+* JIRA Cloud ID
+* JIRA API Key
+
+## Getting Started
+
 1. Get docker image.
 ```sh
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.9.2/docker-compose.yaml'
