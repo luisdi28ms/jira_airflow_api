@@ -1,6 +1,23 @@
 # Manage JIRA's Alerts with Airflow
 A small project showcasing my knowledge of integrating API's and Airflow workflows.
 
+## Check Airflow Alert dag
+
+The [Check Airflow alert dag](/dags/check_airflow_alert.py) runs daily and leverages [JIRA Service Management ops REST API](https://developer.atlassian.com/cloud/jira/service-desk-ops/rest/v2/api-group-alerts/#api-group-alerts) to automate the following steps:
+
+1. Generate an alert with a given message.
+
+2. Get the latest alert ID.
+
+3. Check if the flow is running on a weekday or weekend:
+    * If running on a weekday add a note to the alert.
+    * If running on a weekend add another note to the alert.
+
+![dag graph](/img/check_airflow_alert_graph.jpeg)
+
+## Check Airflow Alert results
+
+![dag result](/img/check_airflow_aler_result.jpeg)
 
 # Run App
 
